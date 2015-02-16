@@ -28,11 +28,13 @@ public class Graph {
         startNode.addVertice(vertice);
         endNode.addVertice(vertice);
 
+        /*
         //andereRichtung
         Vertice vertice2 = new Vertice(endNode, startNode, value);
         vertices.add(vertice2);
         startNode.addVertice(vertice2);
         endNode.addVertice(vertice2);
+        */
     }
 
     public List<Node> getNodes() {

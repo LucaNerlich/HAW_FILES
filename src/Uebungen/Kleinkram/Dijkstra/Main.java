@@ -16,7 +16,6 @@ public class Main {
         Graph graph = new Graph();
         Dijkstra dijkstra = new Dijkstra();
 
-        /*
 
         Node nodeA = new Node("A");
         Node nodeB = new Node("B");
@@ -42,14 +41,14 @@ public class Main {
         graph.createVertice(nodeE, nodeF, 1);
 
         dijkstra.findShortestPath(nodeA, nodeF, graph);
-        */
 
-        generateGraph(100000, 100000, graph);
+/*
+        generateGraph(1000000, 1000000, graph);
         Node nodeA = graph.getNodes().get(0);
         Node nodeB = graph.getNodes().get(5);
 
         dijkstra.findShortestPath(nodeA, nodeB, graph);
-
+*/
 
 
     }
