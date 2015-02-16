@@ -44,8 +44,8 @@ public class Main {
         dijkstra.findShortestPath(nodeA, nodeF, graph);
         */
 
-        generateGraph(100, 100, graph);
-        Node nodeA = graph.getNodes().get(1);
+        generateGraph(100000, 100000, graph);
+        Node nodeA = graph.getNodes().get(0);
         Node nodeB = graph.getNodes().get(5);
 
         dijkstra.findShortestPath(nodeA, nodeB, graph);
