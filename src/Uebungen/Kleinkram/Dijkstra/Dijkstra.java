@@ -119,9 +119,11 @@ public class Dijkstra {
      */
     private void printPath(Node ziel, Graph graph) {
         for (Node node : graph.getNodes()) {
-            System.out.println(node.getName() + " Value: " + node.getValue());
-            System.out.println("PRED: " + node.getPredecessor().getName());
-            System.out.println();
+            if(node.getPredecessor() != null) {
+                System.out.println(node.getName() + " Value: " + node.getValue());
+                System.out.println("PRED: " + node.getPredecessor().getName());
+                System.out.println();
+            }
         }
         if (ziel.getValue() != Double.POSITIVE_INFINITY) {
             found = true;

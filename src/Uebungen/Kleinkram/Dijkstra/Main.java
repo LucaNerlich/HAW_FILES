@@ -1,5 +1,7 @@
 package Uebungen.Kleinkram.Dijkstra;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: lnerlich
@@ -13,6 +15,8 @@ public class Main {
 
         Graph graph = new Graph();
         Dijkstra dijkstra = new Dijkstra();
+
+        /*
 
         Node nodeA = new Node("A");
         Node nodeB = new Node("B");
@@ -38,5 +42,39 @@ public class Main {
         graph.createVertice(nodeE, nodeF, 1);
 
         dijkstra.findShortestPath(nodeA, nodeF, graph);
+        */
+
+        generateGraph(100, 100, graph);
+        Node nodeA = graph.getNodes().get(1);
+        Node nodeB = graph.getNodes().get(5);
+
+        dijkstra.findShortestPath(nodeA, nodeB, graph);
+
+
+
+    }
+
+    public static void generateGraph(int anzahlKnoten, int anzahlKanten, Graph graph) {
+        for (int i = 0; i < anzahlKnoten; i++) {
+            Node A = new Node("Node_" + i);
+            graph.addNode(A);
+        }
+
+        for (int j = 0; j < anzahlKanten; j++) {
+            setzeKante(graph, j);
+        }
+    }
+
+    protected static void setzeKante(Graph graph, int gewichtx) {
+        int indexNodeA = (int) (Math.random() * (graph.getCountNodes()));
+        int indexNodeB = (int) (Math.random() * (graph.getCountNodes()));
+
+        int gewicht = (int) (Math.random() * 100);
+
+        List<Node> node = graph.getNodes();
+        Node nodeA = node.get(indexNodeA);
+        Node nodeB = node.get(indexNodeB);
+
+        graph.createVertice(nodeA, nodeB, gewichtx);
     }
 }

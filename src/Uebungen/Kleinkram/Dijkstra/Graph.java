@@ -15,8 +15,11 @@ public class Graph {
     private List<Node> nodes = new ArrayList<>();
     private List<Vertice> vertices = new ArrayList<>();
 
+    private int countNodes = 0;
+
     public void addNode(Node node) {
         nodes.add(node);
+        countNodes++;
     }
 
     public void createVertice(Node startNode, Node endNode, int value) {
@@ -38,5 +41,9 @@ public class Graph {
 
     public List<Vertice> getVertices() {
         return vertices;
+    }
+
+    public int getCountNodes() {
+        return countNodes;
     }
 }
