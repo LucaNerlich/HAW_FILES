@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>AD.aufgabe9</OriginalElement>
+  <nodes>
+    <node x="209.0" y="655.0">AD.aufgabe9.Anwendung</node>
+    <node x="0.0" y="655.0">AD.aufgabe9.NodeException</node>
+    <node x="0.0" y="0.0">AD.aufgabe9.Sortable</node>
+    <node x="28.75" y="164.27272727272725">AD.aufgabe9.BinaryTree</node>
+    <node x="423.1818181818182" y="178.18181818181816">AD.aufgabe9.BinaryNode</node>
+    <node x="407.0" y="655.0">AD.aufgabe9.TestBinaryTree</node>
+    <node x="92.0" y="448.81818181818187">AD.aufgabe9.BinaryTreeZusatz</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="AD.aufgabe9.BinaryTree" target="AD.aufgabe9.Sortable">
+      <point x="0.0" y="-115.0" />
+      <point x="172.75" y="142.0" />
+      <point x="125.0" y="142.0" />
+      <point x="-125.0" y="58.5" />
+    </edge>
+    <edge source="AD.aufgabe9.BinaryTreeZusatz" target="AD.aufgabe9.Sortable">
+      <point x="79.0" y="-81.5" />
+      <point x="329.0" y="422.0" />
+      <point x="327.25" y="422.0" />
+      <point x="327.25" y="142.0" />
+      <point x="375.0" y="142.0" />
+      <point x="125.0" y="58.5" />
+    </edge>
+    <edge source="AD.aufgabe9.BinaryTreeZusatz" target="AD.aufgabe9.BinaryTree">
+      <point x="-79.0" y="-81.5" />
+      <point x="171.0" y="422.0" />
+      <point x="170.0227272727273" y="421.0909090909091" />
+      <point x="0.0" y="115.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1" x="443.49999999999994" y="388.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
