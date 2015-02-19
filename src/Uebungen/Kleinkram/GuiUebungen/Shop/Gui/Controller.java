@@ -2,12 +2,16 @@ package Uebungen.Kleinkram.GuiUebungen.Shop.Gui;
 
 import Uebungen.Kleinkram.GuiUebungen.Shop.Lager;
 import Uebungen.Kleinkram.GuiUebungen.Shop.Produkte.Produkt;
-import javafx.scene.control.Dialogs;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
+
+import java.util.Optional;
 
 
 /**
  * Created by lnerlich on 17.02.2015.
+ * https://jdk8.java.net/download.html
  */
 public class Controller implements ControllerInterface {
 
@@ -25,21 +29,37 @@ public class Controller implements ControllerInterface {
 
     @Override
     public void addProdukt() {
-        Stage stage = new Stage();
-        String name = Dialogs.showInputDialog(stage, "Bitte geben Sie den Namen des Produkts ein:", "Name", "");
-        String anzahl = Dialogs.showInputDialog(stage, "Bitte geben Sie die gewünschte Anzahl ein:", "Anzahl", "");
+
+        // ATM anscheinend unmoeglich integers zu parsen
+
+        TextInputDialog dialogName = new TextInputDialog("produkt");
+        dialogName.setTitle("Add Produkt");
+        dialogName.setContentText("Name: ");
+        Optional<String> resultName = dialogName.showAndWait();
+
+        TextInputDialog dialogAnzahl = new TextInputDialog("anzahl");
+        dialogAnzahl.setTitle("Add Produkt");
+        dialogAnzahl.setContentText("Anzahl: ");
+        Optional<String> resultAnzahl = dialogAnzahl.showAndWait();
+
+        //resultName.ifPresent(name -> System.out.println("Your name: " + name));
+
         int anzahlconfirmed = 0;
 
         try {
-            int preisInt = Integer.parseInt(anzahl);
+            int preisInt = Integer.parseInt(String.valueOf(resultAnzahl));
             anzahlconfirmed = preisInt;
         } catch (NumberFormatException e) {
+            System.out.println("PARSING FEHLER");
         }
         if (anzahlconfirmed != 0) {
-            Produkt produkt = new Produkt(name, 1);
+            Produkt produkt = new Produkt(resultName.toString(), 1f);
             lager.addProdukt(produkt, anzahlconfirmed);
         } else {
-            Dialogs.showErrorDialog(stage, "Falsche Eingabe!");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setContentText("Falsche Eingabe!");
+            alert.showAndWait();
         }
     }
 
