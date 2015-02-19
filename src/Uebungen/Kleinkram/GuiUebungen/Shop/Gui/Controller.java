@@ -87,7 +87,7 @@ public class Controller implements ControllerInterface {
 
         TextInputDialog dialogAnzahl = new TextInputDialog("price");
         dialogAnzahl.setTitle("Add Produkt");
-        dialogAnzahl.setContentText("Preis: ");
+        dialogAnzahl.setContentText("Preis: (float) ");
 
         //nur in dieser Reihenfolge kann ich nen int Wert uebergeben 0o
         Optional<String> resultAnzahl = dialogAnzahl.showAndWait();
