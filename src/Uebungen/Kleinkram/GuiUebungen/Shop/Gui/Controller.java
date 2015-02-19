@@ -27,11 +27,11 @@ public class Controller implements ControllerInterface {
         view.show(primaryStage);
     }
 
+    /**
+     * In 3 Abfrage Dialogen wird der Name, Anzahl und Preis ermittelt und dann ein neues Produkt dem Lager hinzugefuegt.
+     */
     @Override
     public void addProdukt() {
-
-        // ATM anscheinend unmoeglich integers zu parsen
-
         TextInputDialog dialogName = new TextInputDialog("produkt");
         dialogName.setTitle("Add Produkt");
         dialogName.setContentText("Name: ");
@@ -51,6 +51,11 @@ public class Controller implements ControllerInterface {
         }
     }
 
+    /**
+     * fragt in einem Diaglog die gewuenschte Anzahl ab. -> int
+     *
+     * @return
+     */
     private int getAnzahl() {
         int anzahlconfirmed = 0;
 
@@ -73,6 +78,10 @@ public class Controller implements ControllerInterface {
         return anzahlconfirmed;
     }
 
+    /**
+     * fragt in einem Diaglog den gewuenschten Preis ab. -> float
+     * @return
+     */
     private float getPrice() {
         float priceconfirmed = 0f;
 
