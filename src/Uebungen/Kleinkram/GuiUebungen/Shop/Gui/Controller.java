@@ -37,6 +37,23 @@ public class Controller implements ControllerInterface {
         dialogName.setContentText("Name: ");
         Optional<String> resultName = dialogName.showAndWait();
 
+        int anzahlconfirmed = getAnzahl();
+        float preisconfirmed = getPrice();
+
+        if (anzahlconfirmed != 0) {
+            Produkt produkt = new Produkt(resultName.toString(), preisconfirmed);
+            lager.addProdukt(produkt, anzahlconfirmed);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setContentText("Falsche Eingabe!");
+            alert.showAndWait();
+        }
+    }
+
+    private int getAnzahl() {
+        int anzahlconfirmed = 0;
+
         TextInputDialog dialogAnzahl = new TextInputDialog("anzahl");
         dialogAnzahl.setTitle("Add Produkt");
         dialogAnzahl.setContentText("Anzahl: ");
@@ -45,7 +62,6 @@ public class Controller implements ControllerInterface {
         Optional<String> resultAnzahl = dialogAnzahl.showAndWait();
         String intresult = dialogAnzahl.getResult();
 
-        int anzahlconfirmed = 0;
 
         try {
             int preisInt = Integer.parseInt(intresult);
@@ -53,15 +69,30 @@ public class Controller implements ControllerInterface {
         } catch (NumberFormatException e) {
             System.out.println("PARSING FEHLER");
         }
-        if (anzahlconfirmed != 0) {
-            Produkt produkt = new Produkt(resultName.toString(), 1f);
-            lager.addProdukt(produkt, anzahlconfirmed);
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error Dialog");
-            alert.setContentText("Falsche Eingabe!");
-            alert.showAndWait();
+
+        return anzahlconfirmed;
+    }
+
+    private float getPrice() {
+        float priceconfirmed = 0f;
+
+        TextInputDialog dialogAnzahl = new TextInputDialog("price");
+        dialogAnzahl.setTitle("Add Produkt");
+        dialogAnzahl.setContentText("Preis: ");
+
+        //nur in dieser Reihenfolge kann ich nen int Wert uebergeben 0o
+        Optional<String> resultAnzahl = dialogAnzahl.showAndWait();
+        String intresult = dialogAnzahl.getResult();
+
+
+        try {
+            float preisFloat = Float.parseFloat(intresult);
+            priceconfirmed = preisFloat;
+        } catch (NumberFormatException e) {
+            System.out.println("PARSING FEHLER");
         }
+
+        return priceconfirmed;
     }
 
     @Override
