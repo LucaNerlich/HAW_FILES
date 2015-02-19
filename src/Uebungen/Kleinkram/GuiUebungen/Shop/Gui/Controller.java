@@ -41,8 +41,9 @@ public class Controller implements ControllerInterface {
         dialogAnzahl.setTitle("Add Produkt");
         dialogAnzahl.setContentText("Anzahl: ");
 
-        String intresult = dialogAnzahl.getResult();
+        //nur in dieser Reihenfolge kann ich nen int Wert uebergeben 0o
         Optional<String> resultAnzahl = dialogAnzahl.showAndWait();
+        String intresult = dialogAnzahl.getResult();
 
         //resultName.ifPresent(name -> System.out.println("Your name: " + name));
 
