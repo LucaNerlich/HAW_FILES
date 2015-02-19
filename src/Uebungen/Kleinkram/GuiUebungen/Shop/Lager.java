@@ -16,20 +16,22 @@ public class Lager {
     }
 
     public void addProdukt(Produkt produkt, int anzahl) {
+        //HIER NE .getName Abfrage und wenn true, anzahl stacken
         for (int i = 0; i < lager.length; i++) {
-            if (lager[i] != null && lager[i].equals(produkt)) {
+            if (lager[i] != null && lager[i].getName().equals(produkt.getName()) && lager[i].getPrice() == produkt.getPrice()) {
                 lagerBestand[i] = lagerBestand[i] + anzahl;
                 break;
             }
             if (lager[i] == null) {
                 lager[i] = produkt;
-                lagerBestand[i] = lagerBestand[i] + anzahl;
+                lagerBestand[i] = anzahl;
                 break;
             }
         }
     }
 
     public void printLagerbestand() {
+        System.out.println("------");
         for (int i = 0; i < lager.length; i++) {
             if (lager[i] != null) {
                 System.out.println(lager[i].getName() + " - Bestand: " + lagerBestand[i] + " - Preis: " + lager[i].getPrice());
