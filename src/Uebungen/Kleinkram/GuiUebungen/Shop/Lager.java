@@ -32,7 +32,7 @@ public class Lager {
     public void printLagerbestand() {
         for (int i = 0; i < lager.length; i++) {
             if (lager[i] != null) {
-                System.out.println(lager[i].getName() + " - Bestand: " + lagerBestand[i]);
+                System.out.println(lager[i].getName() + " - Bestand: " + lagerBestand[i] + " - Preis: " + lager[i].getPrice());
             }
         }
     }

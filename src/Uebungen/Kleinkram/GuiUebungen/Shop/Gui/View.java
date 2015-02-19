@@ -51,6 +51,15 @@ public class View {
             }
         });
 
+        Button printInventarWertButton = contentBuilder.createButton("Print InventarWert!");
+        gridPane.add(printInventarWertButton, 0, 2);
+        printInventarWertButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                controller.printInventarWert();
+            }
+        });
+
     }
 
     public void show(Stage stage) {

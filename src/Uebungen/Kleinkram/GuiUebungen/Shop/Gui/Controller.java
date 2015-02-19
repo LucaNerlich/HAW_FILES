@@ -45,8 +45,6 @@ public class Controller implements ControllerInterface {
         Optional<String> resultAnzahl = dialogAnzahl.showAndWait();
         String intresult = dialogAnzahl.getResult();
 
-        //resultName.ifPresent(name -> System.out.println("Your name: " + name));
-
         int anzahlconfirmed = 0;
 
         try {
@@ -68,6 +66,13 @@ public class Controller implements ControllerInterface {
 
     @Override
     public void printLagerbestand() {
+        lager.printLagerbestand();
+    }
+
+    @Override
+    public void printInventarWert() {
         System.out.println(lager.getInventarWert());
     }
+
+
 }

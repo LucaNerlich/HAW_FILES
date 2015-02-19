@@ -8,4 +8,6 @@ public interface ControllerInterface {
     void addProdukt();
 
     void printLagerbestand();
+
+    void printInventarWert();
 }
