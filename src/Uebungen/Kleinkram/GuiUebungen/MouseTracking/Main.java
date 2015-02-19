@@ -1,4 +1,4 @@
-package Uebungen.Kleinkram.GuiGedöns;
+package Uebungen.Kleinkram.GuiUebungen.MouseTracking;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

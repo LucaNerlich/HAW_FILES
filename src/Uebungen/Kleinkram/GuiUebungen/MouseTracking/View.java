@@ -1,4 +1,4 @@
-package Uebungen.Kleinkram.GuiGedöns;
+package Uebungen.Kleinkram.GuiUebungen.MouseTracking;
 
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;

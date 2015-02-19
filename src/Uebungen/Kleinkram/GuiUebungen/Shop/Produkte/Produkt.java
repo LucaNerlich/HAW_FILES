@@ -1,4 +1,4 @@
-package Uebungen.Kleinkram.GuiGedöns.Shop.Produkte;
+package Uebungen.Kleinkram.GuiUebungen.Shop.Produkte;
 
 /**
  * Created by lnerlich on 18.02.2015.

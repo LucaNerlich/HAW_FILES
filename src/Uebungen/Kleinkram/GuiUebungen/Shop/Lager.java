@@ -1,6 +1,6 @@
-package Uebungen.Kleinkram.GuiGedöns.Shop;
+package Uebungen.Kleinkram.GuiUebungen.Shop;
 
-import Uebungen.Kleinkram.GuiGedöns.Shop.Produkte.Produkt;
+import Uebungen.Kleinkram.GuiUebungen.Shop.Produkte.Produkt;
 
 /**
  * Created by lnerlich on 18.02.2015.

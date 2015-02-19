@@ -1,4 +1,4 @@
-package Uebungen.Kleinkram.GuiGedöns.Shop.Produkte;
+package Uebungen.Kleinkram.GuiUebungen.Shop.Produkte;
 
 import java.util.Date;
 
