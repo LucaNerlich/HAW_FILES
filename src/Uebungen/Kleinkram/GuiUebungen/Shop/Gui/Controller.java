@@ -40,6 +40,8 @@ public class Controller implements ControllerInterface {
         TextInputDialog dialogAnzahl = new TextInputDialog("anzahl");
         dialogAnzahl.setTitle("Add Produkt");
         dialogAnzahl.setContentText("Anzahl: ");
+
+        String intresult = dialogAnzahl.getResult();
         Optional<String> resultAnzahl = dialogAnzahl.showAndWait();
 
         //resultName.ifPresent(name -> System.out.println("Your name: " + name));
@@ -47,7 +49,7 @@ public class Controller implements ControllerInterface {
         int anzahlconfirmed = 0;
 
         try {
-            int preisInt = Integer.parseInt(String.valueOf(resultAnzahl));
+            int preisInt = Integer.parseInt(intresult);
             anzahlconfirmed = preisInt;
         } catch (NumberFormatException e) {
             System.out.println("PARSING FEHLER");
