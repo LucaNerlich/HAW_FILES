@@ -15,8 +15,13 @@ public class Lager {
         lagerBestand = new int[lagergroesse];
     }
 
+    /**
+     * fuegt ein Produkt in uebergebener Anzahl dem Lager hinu
+     *
+     * @param produkt
+     * @param anzahl
+     */
     public void addProdukt(Produkt produkt, int anzahl) {
-        //HIER NE .getName Abfrage und wenn true, anzahl stacken
         for (int i = 0; i < lager.length; i++) {
             if (lager[i] != null && lager[i].getName().equals(produkt.getName()) && lager[i].getPrice() == produkt.getPrice()) {
                 lagerBestand[i] = lagerBestand[i] + anzahl;
@@ -30,6 +35,9 @@ public class Lager {
         }
     }
 
+    /**
+     * print das Lagerinventar in der Console
+     */
     public void printLagerbestand() {
         System.out.println("------");
         for (int i = 0; i < lager.length; i++) {
@@ -39,6 +47,10 @@ public class Lager {
         }
     }
 
+    /**
+     * addiert die Preise aller Produkte im Lager
+     * @return
+     */
     public float getInventarWert() {
         float wert = 0f;
 
@@ -47,7 +59,6 @@ public class Lager {
                 wert += (lager[i].getPrice() * lagerBestand[i]);
             }
         }
-
         return wert;
     }
 }
